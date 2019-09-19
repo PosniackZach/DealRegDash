@@ -4,24 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return '''<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Reggie's Home</title>
-        <style>
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-    </head>
-    <body style="background-color:#0F0118 ;">
-        <h1 style="color:white;text-align:center;font-size:200%">DealReg Dash</h1>
-        <img src="https://newevolutiondesigns.com/images/freebies/robot-wallpaper-2.jpg" alt="Reggie" width="1000" height="300" border="10" style="border-color:#BD08D6;">
-        <h2
-    </body>
-</html>'''
+        from OperationInfo import results
+        from OperationInfo import times
+
+        return render_template('home.html', dell=results[0], dellTime=times[0], vmware=results[1], vmwareTime=times[1], lenovo=results[2], lenovoTime=times[2], apc=results[3], apcTime=times[3], hpe=results[4], hpeTime=times[4], hpi=results[5], hpiTime=times[5])
 
 
 if __name__ == '__main__':

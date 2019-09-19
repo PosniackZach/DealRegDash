@@ -1,7 +1,7 @@
 def auditDell(currentDate):
     exists = False
     content = ''
-    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR03.EventLog.txt') as myfile:
+    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR07.EventLog.txt') as myfile:
         for line in myfile:
             if line.find(currentDate) != -1 and line.find('Dell EMC process STARTED') != -1:
                 exists = True

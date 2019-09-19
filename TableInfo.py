@@ -1,8 +1,8 @@
 from ErrorData import errorDell
 
-errors, occurences = errorDell()
+errorsDell, occurencesDell = errorDell()
 
-print("Errors for Dell are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for Dell are {} and occurred {} times perspectively".format(errorsDell, occurencesDell))
 
 from ErrorData import errorVMware
 

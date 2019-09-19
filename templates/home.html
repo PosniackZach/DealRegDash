@@ -1,15 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Reggie's Home</title>
-    <style>
-    body {
-    background-color: #0F0118
-    }
-    </style>
-</head>
-<body>
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Reggie's Home</title>
+        <style>
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 50%;
+                color: 474547;
+                  }
+            td, th {
+                border: 1px solid #BD08D6;
+                text-align: center;
+                padding: 8px;
+                color:white;
+                   }
+            h1 {
+               color:white;
+               text-align:center;
+               font-size:300%
+               }
+            h2 {
+               color:white;
+               text-align:center;
+               font-size:200%
+               }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                }
+        </style>
+    </head>
+    <body style="background-color:#0F0118 ;">
+        <h1>DealReg Dash</h1>
+        <img src="https://newevolutiondesigns.com/images/freebies/robot-wallpaper-2.jpg" alt="Reggie" width="1000" height="300" border="10" style="border-color:#BD08D6;">
+        <h2>Bot Status</h2>
+        <table bgcolor="474547" border="5" style="border-color:474547;">
+            <tr>
+                <th>Vendor</th>
+                <th>Running?</th>
+                <th>Last Run(AZT)</th>
+            </tr>
+            <tr>
+                <td>Dell</td>
+                <td>{{dell}}</td>
+                <td>{{dellTime}}</td>
+            </tr>
+            <tr>
+                <td>VMware</td>
+                <td>{{vmware}}</td>
+                <td>{{vmwareTime}}</td>
+            </tr>
+            <tr>
+                <td>Lenovo</td>
+                <td>{{lenovo}}</td>
+                <td>{{lenovoTime}}</td>
+            </tr>
+            <tr>
+                <td>APC</td>
+                <td>{{apc}}</td>
+                <td>{{apcTime}}</td>
+            </tr>
+            <tr>
+                <td>HPE</td>
+                <td>{{hpe}}</td>
+                <td>{{hpeTime}}</td>
+            </tr>
+            <tr>
+                <td>HPI</td>
+                <td>{{hpi}}</td>
+                <td>{{hpiTime}}</td>
+            </tr>
+        </table>
+    </body>
 </html>
