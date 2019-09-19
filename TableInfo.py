@@ -6,30 +6,30 @@ print("Errors for Dell are {} and occurred {} times perspectively".format(errors
 
 from ErrorData import errorVMware
 
-errors, occurences = errorVMware()
+errorsVMware, occurencesVMware = errorVMware()
 
-print("Errors for VMware are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for VMware are {} and occurred {} times perspectively".format(errorsVMware, occurencesVMware))
 
 from ErrorData import errorLenovo
 
-errors, occurences = errorLenovo()
+errorsLenovo, occurencesLenovo = errorLenovo()
 
-print("Errors for Lenovo are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for Lenovo are {} and occurred {} times perspectively".format(errorsLenovo, occurencesLenovo))
 
 from ErrorData import errorAPC
 
-errors, occurences = errorAPC()
+errorsAPC, occurencesAPC = errorAPC()
 
-print("Errors for APC are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for APC are {} and occurred {} times perspectively".format(errorsAPC, occurencesAPC))
 
 from ErrorData import errorHPE
 
-errors, occurences = errorHPE()
+errorsHPE, occurencesHPE = errorHPE()
 
-print("Errors for HPE are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for HPE are {} and occurred {} times perspectively".format(errorsHPE, occurencesHPE))
 
 from ErrorData import errorHPI
 
-errors, occurences = errorHPI()
+errorsHPI, occurencesHPI = errorHPI()
 
-print("Errors for HPI are {} and occurred {} times perspectively".format(errors, occurences))
+print("Errors for HPI are {} and occurred {} times perspectively".format(errorsHPI, occurencesHPI))
