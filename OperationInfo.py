@@ -68,24 +68,26 @@ timeAZDell = occurenceTime(occurrence)
 
 if result == 'True':
     resultDell = 'Yes'
-    print('Dell ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZDell))
+    if __name__ == '__main__':
+        print('Dell ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZDell))
 else:
     resultDell = 'No'
-    print('Dell is currently not running')
+    if __name__ == '__main__':
+        print('Dell is currently not running')
 
-'''from AuditData import auditVMware
+from AuditData import auditVMware
 
 result, occurrence = auditVMware(currentDate)
 timeAZVMware = occurenceTime(occurrence)
 
 if result == 'True':
     resultVMware = 'Yes'
-    print('VMware ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZVMware))
+    if __name__ == '__main__':
+        print('VMware ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZVMware))
 else:
     resultVMware = 'No'
-    print('VMware is currently not running')'''
-resultVMware = 'Yes'
-timeAZVMware = timeAZDell
+    if __name__ == '__main__':
+        print('VMware is currently not running')
 
 from AuditData import auditLenovo
 
@@ -94,10 +96,12 @@ timeAZLenovo = occurenceTime(occurrence)
 
 if result == 'True':
     resultLenovo = 'Yes'
-    print('Lenovo ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZLenovo))
+    if __name__ == '__main__':
+        print('Lenovo ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZLenovo))
 else:
     resultLenovo = 'No'
-    print('Lenovo is currently not running')
+    if __name__ == '__main__':
+        print('Lenovo is currently not running')
 
 from AuditData import auditAPC
 
@@ -106,10 +110,12 @@ timeAZAPC = occurenceTime(occurrence)
 
 if result == 'True':
     resultAPC = 'Yes'
-    print('APC ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZAPC))
+    if __name__ == '__main__':
+        print('APC ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZAPC))
 else:
     resultAPC = 'No'
-    print('APC is currently not running')
+    if __name__ == '__main__':
+        print('APC is currently not running')
 
 from AuditData import auditHPE
 
@@ -118,10 +124,12 @@ timeAZHPE = occurenceTime(occurrence)
 
 if result == 'True':
     resultHPE = 'Yes'
-    print('HPE ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPE))
+    if __name__ == '__main__':
+        print('HPE ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPE))
 else:
     resultHPE = 'No'
-    print('HPE is currently not running')
+    if __name__ == '__main__':
+        print('HPE is currently not running')
 
 from AuditData import auditHPI
 
@@ -130,10 +138,12 @@ timeAZHPI = occurenceTime(occurrence)
 
 if result == 'True':
     resultHPI = 'Yes'
-    print('HPI ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPI))
+    if __name__ == '__main__':
+        print('HPI ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPI))
 else:
     resultHPI = 'No'
-    print('HPI is currently not running')
+    if __name__ == '__main__':
+        print('HPI is currently not running')
 
 results = [resultDell, resultVMware, resultLenovo, resultAPC, resultHPE, resultHPI]
 times = [timeAZDell, timeAZVMware, timeAZLenovo, timeAZAPC, timeAZHPE, timeAZHPI]
