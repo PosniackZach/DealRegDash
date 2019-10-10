@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Reggie's Home</title>
-        <style>
-            table {
-                margin-left: auto;
-                margin-right: auto;
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 50%;
-                color: 474547;
-                  }
-            td, th {
-                border: 1px solid #E866E8;
-                text-align: center;
-                padding: 8px;
-                color:white;
-                   }
-            h1 {
-               color:white;
-               text-align:center;
-               font-size:300%
-               }
-            h2 {
-               color:white;
-               text-align:center;
-               font-size:200%
-               }
-            img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                }
-        </style>
-    </head>
-    <body style="background-color:#131113;">
+{% extends "base.html" %}
+
+{% block content %}
         <h1>DealReg Dash</h1>
         <img src="https://newevolutiondesigns.com/images/freebies/robot-wallpaper-2.jpg" alt="Reggie" width="1000" height="300" border="10" style="border-color:#E866E8;">
         <h2>Bot Status</h2>
@@ -76,13 +41,4 @@
                 <td>{{hpiTime}}</td>
             </tr>
         </table>
-        <h2>Bot Errors</h2>
-        <table bgcolor="474547" border="5" style="border-color:474547;">
-            <tr>
-                <th>Vendor</th>
-                <th>Error Line</th>
-                <th>Occurrences</th>
-            </tr>
-        </table>
-    </body>
-</html>
+{% endblock %}

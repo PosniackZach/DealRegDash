@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reggie's Home</title>
+    <style>
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 50%;
+                color: 474547;
+                  }
+            td, th {
+                border: 1px solid #E866E8;
+                text-align: center;
+                padding: 8px;
+                color:white;
+                   }
+            h1 {
+               color:white;
+               text-align:center;
+               font-size:300%
+               }
+            h2 {
+               color:white;
+               text-align:center;
+               font-size:200%
+               }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                }
+        </style>
+</head>
+<body style="background-color:#131113;">
+    <div>
+        DealReg:
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('Dell') }}">Dell Data</a>
+        <a href="{{ url_for('VMware') }}">VMware Data</a>
+        <a href="{{ url_for('Lenovo') }}">Lenovo Data</a>
+        <a href="{{ url_for('APC') }}">APC Data</a>
+        <a href="{{ url_for('HPE') }}">HPE Data</a>
+        <a href="{{ url_for('HPI') }}">HPI Data</a>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

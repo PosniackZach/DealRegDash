@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>APC Errors</h2>
+    <table bgcolor="474547" border="5" style="border-color:474547;">
+        <tr>
+            <th>Vendor</th>
+            <th>Error Line</th>
+            <th>Occurrences</th>
+        </tr>
+        {% for line in errorsAPC %}
+            <tr>
+                {% if loop.index0 == 0 %}
+                <td>APC</td>
+                <td>{{errorsAPC[loop.index0]}}</td>
+                <td>{{occurencesAPC[loop.index0]}}</td>
+                {% else %}
+                <td></td>
+                <td>{{errorsAPC[loop.index0]}}</td>
+                <td>{{occurencesAPC[loop.index0]}}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

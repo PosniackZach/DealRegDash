@@ -86,7 +86,7 @@ try:
     timeAZDell = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZDell[3:5])
+        x = int(timeAZDell[2:4])
         resultDell = isRunning(x)
         if __name__ == '__main__':
             print('Dell ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZDell))
@@ -102,7 +102,7 @@ try:
     timeAZVMware = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZVMware[3:5])
+        x = int(timeAZVMware[2:4])
         resultVMware = isRunning(x)
         if __name__ == '__main__':
             print('VMware ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZVMware))
@@ -118,7 +118,7 @@ try:
     timeAZLenovo = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZLenovo[3:5])
+        x = int(timeAZLenovo[2:4])
         resultLenovo = isRunning(x)
         if __name__ == '__main__':
             print('Lenovo ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZLenovo))
@@ -134,7 +134,7 @@ try:
     timeAZAPC = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZAPC[3:5])
+        x = int(timeAZAPC[2:4])
         resultAPC = isRunning(x)
         if __name__ == '__main__':
             print('APC ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZAPC))
@@ -150,7 +150,7 @@ try:
     timeAZHPE = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZHPE[3:5])
+        x = int(timeAZHPE[2:4])
         resultHPE = isRunning(x)
         if __name__ == '__main__':
             print('HPE ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPE))
@@ -166,7 +166,7 @@ try:
     timeAZHPI = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZHPI[3:5])
+        x = int(timeAZHPI[2:4])
         resultHPI = isRunning(x)
         if __name__ == '__main__':
             print('HPI ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPI))

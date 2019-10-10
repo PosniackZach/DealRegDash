@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Lenovo Errors</h2>
+    <table bgcolor="474547" border="5" style="border-color:474547;">
+        <tr>
+            <th>Vendor</th>
+            <th>Error Line</th>
+            <th>Occurrences</th>
+        </tr>
+        {% for line in errorsLenovo %}
+            <tr>
+                {% if loop.index0 == 0 %}
+                <td>Lenovo</td>
+                <td>{{errorsLenovo[loop.index0]}}</td>
+                <td>{{occurencesLenovo[loop.index0]}}</td>
+                {% else %}
+                <td></td>
+                <td>{{errorsLenovo[loop.index0]}}</td>
+                <td>{{occurencesLenovo[loop.index0]}}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
