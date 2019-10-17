@@ -9,7 +9,7 @@ currentDate = str(currentMonth) + '/' + str(currentDay) + "/" + str(currentYear)
 
 def occurenceTime(occurence):
     lastOccurrence = occurrence.split(':')
-    if lastOccurrence[2].find('PM') != -1:
+    if lastOccurrence[2].find('P') != -1:
         if int(lastOccurrence[0]) >= 8 and int(lastOccurrence[0]) != 12:
             lastOccurrenceHour = int(lastOccurrence[0]) - 7
             lastOccurrenceCycle = 'PM'
@@ -62,21 +62,33 @@ def occurenceTime(occurence):
     return "{}:{} {}".format(lastOccurrenceHour, lastOccurrenceMinute, lastOccurrenceCycle)
 
 def isRunning(time):
+    ref = time
+    time = time[:-2]
+    timeSub = time.split(':')
     now = datetime.datetime.now()
+    nowHour = now.hour
     nowMin = now.minute
-    dif = nowMin - time
-    if dif <= 0:
-        x = (60 - time) + nowMin
-        if x > 20 and x != 60:
-            return 'No'
-        else:
-            return 'Yes'
+    x = int(timeSub[0])
+    y = int(timeSub[1])
+    if ref.find('PM') != -1 and x != 12:
+        x = x + 12
+    difHour = nowHour - x
+    difMin = nowMin - y
+    if difHour != 0 and difHour != 1 and difHour != -23:
+        return 'No'
     else:
-        x = dif
-        if x > 20:
-            return 'No'
+        if difMin <= 0:
+            a = (60 - y) + nowMin
+            if a > 20 and a != 60:
+                return 'No'
+            else:
+                return 'Yes'
         else:
-            return 'Yes'
+            a = difMin
+            if a > 20:
+                return 'No'
+            else:
+                return 'Yes'
 
 
 from AuditData import auditDell
@@ -86,8 +98,7 @@ try:
     timeAZDell = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZDell[2:4])
-        resultDell = isRunning(x)
+        resultDell = isRunning(timeAZDell)
         if __name__ == '__main__':
             print('Dell ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZDell))
 except:
@@ -102,8 +113,7 @@ try:
     timeAZVMware = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZVMware[2:4])
-        resultVMware = isRunning(x)
+        resultVMware = isRunning(timeAZVMware)
         if __name__ == '__main__':
             print('VMware ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZVMware))
 except:
@@ -118,8 +128,7 @@ try:
     timeAZLenovo = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZLenovo[2:4])
-        resultLenovo = isRunning(x)
+        resultLenovo = isRunning(timeAZLenovo)
         if __name__ == '__main__':
             print('Lenovo ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZLenovo))
 except:
@@ -134,8 +143,7 @@ try:
     timeAZAPC = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZAPC[2:4])
-        resultAPC = isRunning(x)
+        resultAPC = isRunning(timeAZAPC)
         if __name__ == '__main__':
             print('APC ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZAPC))
 except:
@@ -150,8 +158,7 @@ try:
     timeAZHPE = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZHPE[2:4])
-        resultHPE = isRunning(x)
+        resultHPE = isRunning(timeAZHPE)
         if __name__ == '__main__':
             print('HPE ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPE))
 except:
@@ -166,8 +173,7 @@ try:
     timeAZHPI = occurenceTime(occurrence)
 
     if result == 'True':
-        x = int(timeAZHPI[2:4])
-        resultHPI = isRunning(x)
+        resultHPI = isRunning(timeAZHPI)
         if __name__ == '__main__':
             print('HPI ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPI))
 except:
