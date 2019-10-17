@@ -37,14 +37,13 @@
 </head>
 <body style="background-color:#131113;">
     <div>
-        DealReg:
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('Dell') }}">Dell Data</a>
-        <a href="{{ url_for('VMware') }}">VMware Data</a>
-        <a href="{{ url_for('Lenovo') }}">Lenovo Data</a>
-        <a href="{{ url_for('APC') }}">APC Data</a>
-        <a href="{{ url_for('HPE') }}">HPE Data</a>
-        <a href="{{ url_for('HPI') }}">HPI Data</a>
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+        <a href="{{ url_for('Dell') }}"><button>Dell</button></a>
+        <a href="{{ url_for('VMware') }}"><button>VMware</button></a>
+        <a href="{{ url_for('Lenovo') }}"><button>Lenovo</button></a>
+        <a href="{{ url_for('APC') }}"><button>APC</button></a>
+        <a href="{{ url_for('HPE') }}"><button>HPE</button></a>
+        <a href="{{ url_for('HPI') }}"><button>HPI</button></a>
     </div>
     <hr>
     {% block content %}{% endblock %}

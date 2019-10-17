@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+        <script>src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <h1>DealReg Dash</h1>
         <img src="https://newevolutiondesigns.com/images/freebies/robot-wallpaper-2.jpg" alt="Reggie" width="1000" height="300" border="10" style="border-color:#E866E8;">
         <h2>Bot Status</h2>
@@ -12,33 +13,56 @@
             </tr>
             <tr>
                 <td>Dell</td>
-                <td>{{dell}}</td>
-                <td>{{dellTime}}</td>
+                <td id="dell">{{dell}}</td>
+                <td id="dellTime">{{dellTime}}</td>
             </tr>
             <tr>
                 <td>VMware</td>
-                <td>{{vmware}}</td>
-                <td>{{vmwareTime}}</td>
+                <td id="vmware">{{vmware}}</td>
+                <td id="vmwareTime">{{vmwareTime}}</td>
             </tr>
             <tr>
                 <td>Lenovo</td>
-                <td>{{lenovo}}</td>
-                <td>{{lenovoTime}}</td>
+                <td id="lenovo">{{lenovo}}</td>
+                <td id="lenovoTime">{{lenovoTime}}</td>
             </tr>
             <tr>
                 <td>APC</td>
-                <td>{{apc}}</td>
-                <td>{{apcTime}}</td>
+                <td id="apc">{{apc}}</td>
+                <td id="apcTime">{{apcTime}}</td>
             </tr>
             <tr>
                 <td>HPE</td>
-                <td>{{hpe}}</td>
-                <td>{{hpeTime}}</td>
+                <td id="hpe">{{hpe}}</td>
+                <td id="hpeTime">{{hpeTime}}</td>
             </tr>
             <tr>
                 <td>HPI</td>
-                <td>{{hpi}}</td>
-                <td>{{hpiTime}}</td>
+                <td id="hpi">{{hpi}}</td>
+                <td id="hpiTime">{{hpiTime}}</td>
             </tr>
         </table>
+         <script>
+            setInterval(update() {
+                $.ajax({
+                    type: "GET",
+                    url: "/updateTable",
+                })
+                    .done(update(dell, dellTime, vmware, vmwareTime, lenovo, lenovoTime, apc, apcTime, hpe, hpeTime, hpi, hpiTime){
+                        document.getElementById("dell").innerHtml = dell;
+                        document.getElementById("dellTime").innerHtml = dellTime;
+                        document.getElementById("vmware").innerHtml = vmware;
+                        document.getElementById("vmwareTime").innerHtml = vmwareTime;
+                        document.getElementById("lenovo").innerHtml = lenovo;
+                        document.getElementById("lenovoTime").innerHtml = lenovoTime;
+                        document.getElementById("apc").innerHtml = apc;
+                        document.getElementById("apcTime").innerHtml = apcTime;
+                        document.getElementById("hpe").innerHtml = hpe;
+                        document.getElementById("hpeTime").innerHtml = hpeTime;
+                        document.getElementById("hpi").innerHtml = hpi;
+                        document.getElementById("hpiTime").innerHtml = hpiTime;
+
+                    }
+            }, 60000 );
+        </script>
 {% endblock %}
