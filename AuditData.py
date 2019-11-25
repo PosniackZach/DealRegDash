@@ -1,7 +1,7 @@
 def auditDell(currentDate):
     exists = False
     content = ''
-    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR07.EventLog.txt') as myfile:
+    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR03.EventLog.txt') as myfile:
         for line in myfile:
             if line.find(currentDate) != -1 and line.find('Dell EMC process STARTED') != -1:
                 exists = True
@@ -49,7 +49,7 @@ def auditAPC(currentDate):
 def auditHPE(currentDate):
     exists = False
     content = ''
-    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR06.EventLog.txt') as myfile:
+    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR04.EventLog.txt') as myfile:
         for line in myfile:
             if line.find(currentDate) != -1 and line.find('Hewlett Packard Enterprise process STARTED') != -1:
                 exists = True
@@ -61,7 +61,7 @@ def auditHPE(currentDate):
 def auditHPI(currentDate):
     exists = False
     content = ''
-    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR06.EventLog.txt') as myfile:
+    with open('//insight.com/team/RPA/Prod/DealReg.00000/USAZWRPAPBR04.EventLog.txt') as myfile:
         for line in myfile:
             if line.find(currentDate) != -1 and line.find('HPI process STARTED') != -1:
                 exists = True

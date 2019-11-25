@@ -7,7 +7,7 @@ currentMonth = today.month
 currentYear = today.year
 currentDate = str(currentMonth) + '/' + str(currentDay) + "/" + str(currentYear)
 
-def occurenceTime(occurence):
+def occurenceTime(occurrence):
     lastOccurrence = occurrence.split(':')
     if lastOccurrence[2].find('P') != -1:
         if int(lastOccurrence[0]) >= 8 and int(lastOccurrence[0]) != 12:
@@ -78,11 +78,10 @@ def isRunning(time):
         return 'No'
     else:
         if difMin <= 0:
-            a = (60 - y) + nowMin
-            if a > 20 and a != 60:
-                return 'No'
-            else:
+            if -59 <= difMin <= -40 or difMin == 0:
                 return 'Yes'
+            else:
+                return 'No'
         else:
             a = difMin
             if a > 20:
@@ -103,6 +102,7 @@ try:
             print('Dell ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZDell))
 except:
     resultDell = 'No'
+    timeAZDell = 'Null'
     if __name__ == '__main__':
         print('Dell is currently not running')
 
@@ -118,6 +118,7 @@ try:
             print('VMware ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZVMware))
 except:
     resultVMware = 'No'
+    timeAZVMware = 'Null'
     if __name__ == '__main__':
         print('VMware is currently not running')
 
@@ -133,6 +134,7 @@ try:
             print('Lenovo ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZLenovo))
 except:
     resultLenovo = 'No'
+    timeAZLenovo = 'Null'
     if __name__ == '__main__':
         print('Lenovo is currently not running')
 
@@ -148,6 +150,7 @@ try:
             print('APC ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZAPC))
 except:
     resultAPC = 'No'
+    timeAZAPC = 'Null'
     if __name__ == '__main__':
         print('APC is currently not running')
 
@@ -163,6 +166,7 @@ try:
             print('HPE ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPE))
 except:
     resultHPE = 'No'
+    timeAZHPE = 'Null'
     if __name__ == '__main__':
         print('HPE is currently not running')
 
@@ -178,6 +182,7 @@ try:
             print('HPI ran today {} and was last deployed at {} AZ time.'.format(currentDate, timeAZHPI))
 except:
     resultHPI = 'No'
+    timeAZHPI = 'Null'
     if __name__ == '__main__':
         print('HPI is currently not running')
 
