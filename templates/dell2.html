@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Dell Errors</h2>
+    <table bgcolor="474547" border="5" style="border-color:474547;">
+        <tr>
+            <th>Error Line</th>
+            <th>Occurrences</th>
+             <th>Request IDs</th>
+        </tr>
+        {% for error in dell %}
+        <tr>
+            {% for line in error %}
+                {% if loop.index0 <= 1 %}
+                    <td>{{line}}</td>
+                {% endif %}
+            {% endfor %}
+            <td>
+            {% for line in error %}
+                {% if loop.index0 > 1 %}
+                    {{line}}<br>
+                {% endif %}
+            {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
